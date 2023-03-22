@@ -1,0 +1,30 @@
+//Codigo Ingrid
+//EJERCICIO 2 Java Loops II
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        //ya se encuentran las variables principales redactadas para identificar mediante scanner
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            //agregamos una variable donde se guardará nuestro dato en suma de la fórmula
+            int sum = a; //inicializamos a que guardara los nuevos datos generados
+            //usamos un nuevo for con el index j porque i, ya fue tomado en el primer for
+            //para iterar cada caso de dato 'n'
+            for (int j = 0; j < n; j++) { 
+                //tomamos la formula a+2^0 * b y la redactamos conforme a la sintaxis de Java 
+                sum += (int)Math.pow(2, j) * b; // == a+2^0 * b 
+                System.out.print(sum + " "); //imprimimos para esta segunda iteración
+            }
+            //para el final, imprimimos para separar la salida de cada caso de prueba
+            System.out.println(); 
+        }
+        in.close(); //termina scanner y clase
+    }
+}

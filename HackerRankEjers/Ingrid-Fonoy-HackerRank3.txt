@@ -1,0 +1,70 @@
+//Codigo Ingrid
+//EJERCICIO 3
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
+    /*
+     * Complete the 'plusMinus' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void plusMinus(List<Integer> arr) {
+    //Define 3 variables dobles, e inicializa con 0 cada una
+    int n = arr.size();
+    int positive = 0;
+    int negative = 0;
+    int zero = 0;
+    
+    //Con el for, recorremos la lista 
+    for(int i=0; i < n; i++){
+        //Con condicionales If-Else primero, para encontrar los nums positivos 'mayor que cero'
+        if(arr.get(i) > 0){
+            positive++; //incrementa valor
+            //Aquí para los numeros negativos que se redacta que son menor que cero
+        } else if(arr.get(i) < 0){
+            negative++; //incrementa valor 
+        } else { //
+            zero++;
+        }
+    }
+    //ahora, dividir los 3 valores con el tamaño de la lista
+    double positiveRatio = (double) positive / n;
+    double negativeRatio = (double) negative / n;
+    double zeroRatio = (double) zero / n;
+    
+    //imprimimos cada caso
+    System.out.printf("%.6f\n", positiveRatio);
+    System.out.printf("%.6f\n", negativeRatio);
+    System.out.printf("%.6f\n", zeroRatio);
+}
+
+}
+//Esto es parte del testing . No es necesario tocar nada aqui.
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
+
+        Result.plusMinus(arr);
+
+        bufferedReader.close();
+    }
+}

@@ -1,0 +1,30 @@
+//Codigo IngridsFonoyd
+EJERCICIO 1 Java If-Else 
+
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args){
+        //Pedimos al usuario un num entero 'n'
+        Scanner num = new Scanner(System.in);
+        //Revisamos que se importo java.util.Scanner;
+        //Definimos nuestro num entero 'n'
+        int n = num.nextInt();
+        
+        //Definimos la estructura If-Else
+        //Num impar se representa como != porque indica que el resultado de la operacion no es cero, entonces, es impar
+        if (n % 2 != 0) { //Si es impar, imprime "Weird"
+            System.out.println("Weird");
+            //Si n es par && n>=2 && n<=5, imprime "Not Weird"
+        } else if(n % 2 == 0 && n>=2 && n<=5){
+            System.out.println("Not Weird");
+            //Si n is es par && n>=6 && n<=20, imprime "Weird"
+        } else if(n % 2 == 0 && n>=6 && n<=20){
+            System.out.println("Weird");
+            //Si n es par y mayor que n>20, imprime "Not Weird"
+        } else if (n>20) {
+            System.out.println("Not Weird");
+        } //Termina estructura If-else
+    } //Termina main 
+    
+}//Termina la clase
